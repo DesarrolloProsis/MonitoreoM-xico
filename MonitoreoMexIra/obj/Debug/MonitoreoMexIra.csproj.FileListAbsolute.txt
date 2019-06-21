@@ -1,0 +1,12 @@
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csprojAssemblyReference.cache
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\MonitoreoMexIra.exe.config
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\MonitoreoMexIra.exe
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\MonitoreoMexIra.pdb
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\Telegram.Bot.dll
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\Telegram.Bot.xml
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.CopyComplete
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.exe
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.pdb
