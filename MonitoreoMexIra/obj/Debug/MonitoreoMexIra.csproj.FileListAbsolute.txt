@@ -1,4 +1,3 @@
-C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csprojAssemblyReference.cache
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.CoreCompileInputs.cache
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\MonitoreoMexIra.exe.config
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\MonitoreoMexIra.exe
@@ -10,3 +9,5 @@ C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\bin\Debug\Telegram
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.CopyComplete
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.exe
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.pdb
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.ProjectInstaller.resources
+C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.GenerateResource.cache
