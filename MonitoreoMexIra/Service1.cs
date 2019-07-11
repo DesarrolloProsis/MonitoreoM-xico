@@ -57,85 +57,104 @@ namespace MonitoreoMexIra
         public async void Monitorear()
 
         {
-            timer.Enabled = false;
-            intentos++;
-            List<PlazasInfo> plazas = new List<PlazasInfo>();
-            List<Argumentos> args = new List<Argumentos>();
-            string Mensaje = string.Empty;
-
-            using (HttpClient client = new HttpClient())
+            NuevoConcentrado.Concentrado.Clear();
+            try
             {
-                var json = await client.GetStringAsync("http://pc004.sytes.net:85/api/values");
-                var data = JArray.Parse(json);
+                timer.Enabled = false;
+                intentos++;
+                List<PlazasInfo> plazas = new List<PlazasInfo>();
+                List<Argumentos> args = new List<Argumentos>();
+                string Mensaje = string.Empty;
 
-                foreach (var Plaza in data)
+                using (HttpClient client = new HttpClient())
                 {
-                    plazas.Add(new PlazasInfo
-                    {
-                        Name_caseta = Plaza["Name_caseta"].ToString(),
-                        Argumentos = Plaza["Argumentos"].ToString()
-                    });
-                };
-            }
+                    var json = await client.GetStringAsync("http://pc004.sytes.net:85/api/values");
+                    var data = JArray.Parse(json);
 
-            foreach (var Plaza in plazas)
-            {
-                if (Plaza.Argumentos.ToString() == "Sin Conexión")
-                {
-                    if (intentos == 36)
+                    foreach (var Plaza in data)
                     {
-                        NuevoConcentrado.Concentrado.Add(new PlazaStatus
+                        plazas.Add(new PlazasInfo
                         {
-                            Nombre_Plaza = Plaza.Name_caseta,
-                            StatusPlaza = "Sin Conexión"
+                            Name_caseta = Plaza["Name_caseta"].ToString(),
+                            Argumentos = Plaza["Argumentos"].ToString()
                         });
-                    }
+                    };
                 }
-                else
+
+                foreach (var Plaza in plazas)
                 {
-                    var jsonargs = JArray.Parse("["+Plaza.Argumentos+"]");
-                    PlazaStatus NPlazaStatus = new PlazaStatus();
-                    foreach (var argumento in jsonargs)
+                    if (Plaza.Argumentos.ToLower().Contains("sin"))
                     {
-                        args.Add(new Argumentos
-                        {
-                            ListaSQL = argumento["ListaSQL"][3].ToString(),
-                            WebService = argumento["WebService"][1].ToString(),
-                            ArchivosServidor = argumento["ArchivosServidor"][3].ToString()
-                        });
-
-                        NPlazaStatus = GetStatus(Plaza.Name_caseta, args.LastOrDefault());
-
-                        if (intentos == 36)
+                        if (Plaza.Argumentos == "Sin Conexion Sql")
                         {
                             NuevoConcentrado.Concentrado.Add(new PlazaStatus
                             {
-                                Nombre_Plaza = NPlazaStatus.Nombre_Plaza,
-                                StatusPlaza = NPlazaStatus.StatusPlaza
+                                Nombre_Plaza = Plaza.Name_caseta,
+                                StatusPlaza = "Sin Conexión SQL"
+                            });
+                            Mensaje += "*Plaza: " + NuevoConcentrado.Concentrado.LastOrDefault().Nombre_Plaza + "* \n" + NuevoConcentrado.Concentrado.LastOrDefault().StatusPlaza + "\n";
+                        }
+                        else if (intentos == 36 && Plaza.Argumentos != "Sin Conexion Sql")
+                        {
+                            NuevoConcentrado.Concentrado.Add(new PlazaStatus
+                            {
+                                Nombre_Plaza = Plaza.Name_caseta,
+                                StatusPlaza = "Sin Conexión a Plaza"
                             });
                         }
-                        else if(NPlazaStatus.StatusPlaza != "OK")
+                    }
+                    else
+                    {
+                        var jsonargs = JArray.Parse("[" + Plaza.Argumentos + "]");
+                        PlazaStatus NPlazaStatus = new PlazaStatus();
+                        foreach (var argumento in jsonargs)
                         {
-                            Mensaje += "*Plaza: " + NPlazaStatus.Nombre_Plaza + "* \n" + NPlazaStatus.StatusPlaza + "\n";
+                            args.Add(new Argumentos
+                            {
+                                ListaSQL = argumento["ListaSQL"][3].ToString(),
+                                WebService = argumento["WebService"][1].ToString(),
+                                ArchivosServidor = argumento["ArchivosServidor"][3].ToString()
+                            });
+
+                            NPlazaStatus = GetStatus(Plaza.Name_caseta, args.LastOrDefault());
+
+                            if (intentos == 36)
+                            {
+                                NuevoConcentrado.Concentrado.Add(new PlazaStatus
+                                {
+                                    Nombre_Plaza = NPlazaStatus.Nombre_Plaza,
+                                    StatusPlaza = NPlazaStatus.StatusPlaza
+                                });
+                            }
+                            else if (NPlazaStatus.StatusPlaza != "OK")
+                            {
+                                Mensaje += "*Plaza: " + NPlazaStatus.Nombre_Plaza + "* \n" + NPlazaStatus.StatusPlaza + "\n";
+                            }
                         }
                     }
                 }
-            }
-            if (intentos == 36)
-            {
-                intentos = 0;
-                Mensaje = "*Resumen de Plazas* \n";
-                foreach (var item in NuevoConcentrado.Concentrado)
+                if (intentos == 36)
                 {
-                    Mensaje += "*Plaza: " + item.Nombre_Plaza + "* \n" + item.StatusPlaza + "\n";
+                    intentos = 0;
+                    Mensaje = "*Resumen de Plazas* \n";
+                    foreach (var item in NuevoConcentrado.Concentrado)
+                    {
+                        Mensaje += "*Plaza: " + item.Nombre_Plaza + "* \n" + item.StatusPlaza + "\n";
+                    }
+                    await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                 }
-                await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                else if (Mensaje != string.Empty)
+                {
+                    await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                }
                 timer.Enabled = true;
             }
-            else if (Mensaje != string.Empty)
+            catch (Exception ex)
             {
-                await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n"+ Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + ex.Message, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                timer.Enabled = true;
             }
+          
         }
         public PlazaStatus GetStatus(string NombrePlaza, Argumentos args)
         {
@@ -148,7 +167,6 @@ namespace MonitoreoMexIra
                 Observaciones += "Archivos Servidor atrasado\n";
             return new PlazaStatus
             {
-
                 Nombre_Plaza = NombrePlaza,
                 StatusPlaza = Observaciones == string.Empty ? "OK" : Observaciones
             };         
