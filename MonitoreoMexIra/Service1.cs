@@ -68,7 +68,7 @@ namespace MonitoreoMexIra
 
                 using (HttpClient client = new HttpClient())
                 {
-                    var json = await client.GetStringAsync("http://pc004.sytes.net:85/api/values");
+                    var json = await client.GetStringAsync("http://pc004.sytes.net:185/api/values");
                     var data = JArray.Parse(json);
 
                     foreach (var Plaza in data)

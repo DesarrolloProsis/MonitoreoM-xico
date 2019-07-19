@@ -12,3 +12,16 @@ C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\Monitore
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.exe
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.pdb
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csprojAssemblyReference.cache
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\bin\Debug\MonitoreoMexIra.exe.config
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\bin\Debug\MonitoreoMexIra.exe
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\bin\Debug\MonitoreoMexIra.pdb
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\bin\Debug\Telegram.Bot.dll
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\bin\Debug\Telegram.Bot.xml
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.ProjectInstaller.resources
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.GenerateResource.cache
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.CoreCompileInputs.cache
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.CopyComplete
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.exe
+C:\Users\MACHINE-1\Documents\GitHub\MonitoreoM-xico\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.pdb
