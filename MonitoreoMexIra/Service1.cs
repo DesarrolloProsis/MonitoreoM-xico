@@ -78,7 +78,7 @@ namespace MonitoreoMexIra
                             Name_caseta = Plaza["Name_caseta"].ToString(),
                             Argumentos = Plaza["Argumentos"].ToString()
                         });
-                    };
+                    }
                 }
 
                 foreach (var Plaza in plazas)
@@ -141,17 +141,17 @@ namespace MonitoreoMexIra
                     {
                         Mensaje += "*Plaza: " + item.Nombre_Plaza + "* \n" + item.StatusPlaza + "\n";
                     }
-                    await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                    await Bot.SendTextMessageAsync(343941115, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                 }
                 else if (Mensaje != string.Empty)
                 {
-                    await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                    await Bot.SendTextMessageAsync(343941115, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                 }
                 timer.Enabled = true;
             }
             catch (Exception ex)
             {
-                await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + ex.Message, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                await Bot.SendTextMessageAsync(343941115, "*México-Irapuato* \n" + ex.Message, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                 timer.Enabled = true;
             }
           
