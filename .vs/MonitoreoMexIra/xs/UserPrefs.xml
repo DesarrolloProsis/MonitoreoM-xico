@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{68F1CB3E-786B-4143-A3F0-8B8051E83371}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonitoreoMexIra/Service1.cs">
+    <Files>
+      <File FileName="MonitoreoMexIra/Service1.cs" Line="71" Column="60" />
+      <File FileName="TestMonitoreoMexIra/Form1.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MonitoreoMexIra" expanded="True">
+            <Node name="MonitoreoMexIra" expanded="True">
+              <Node name="Service1.cs" expanded="True" selected="True" />
+            </Node>
+            <Node name="TestMonitoreoMexIra" expanded="True">
+              <Node name="Form1.cs" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MonitoreoMexIra PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

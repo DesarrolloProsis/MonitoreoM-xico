@@ -78,7 +78,7 @@ namespace MonitoreoMexIra
                             Name_caseta = Plaza["Name_caseta"].ToString(),
                             Argumentos = Plaza["Argumentos"].ToString()
                         });
-                    };
+                    }
                 }
 
                 foreach (var Plaza in plazas)
