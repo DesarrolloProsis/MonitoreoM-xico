@@ -11,4 +11,3 @@ C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\Monitore
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csproj.CopyComplete
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.exe
 C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.pdb
-C:\Users\Rodrigo\source\repos\MonitoreoMexIra\MonitoreoMexIra\obj\Debug\MonitoreoMexIra.csprojAssemblyReference.cache

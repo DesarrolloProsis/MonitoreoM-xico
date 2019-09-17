@@ -20,7 +20,7 @@ namespace MonitoreoMexIra
         int intentos;
         public ConcentradoPlazas NuevoConcentrado = new ConcentradoPlazas();
 
-        private static readonly TelegramBotClient Bot = new TelegramBotClient("834404388:AAG8JcPTHi9API16h1TF5C_EgsB78QToaP8");
+        private static readonly TelegramBotClient Bot = new TelegramBotClient("907953515:AAFVLIV3BILbnAVXn1qsMUTskEkaSMPnb58");
 
         public Service1()
         {
@@ -68,7 +68,7 @@ namespace MonitoreoMexIra
 
                 using (HttpClient client = new HttpClient())
                 {
-                    var json = await client.GetStringAsync("http://pc004.sytes.net:85/api/values");
+                    var json = await client.GetStringAsync("http://pc004.sytes.net:185/api/values");
                     var data = JArray.Parse(json);
 
                     foreach (var Plaza in data)
@@ -141,17 +141,17 @@ namespace MonitoreoMexIra
                     {
                         Mensaje += "*Plaza: " + item.Nombre_Plaza + "* \n" + item.StatusPlaza + "\n";
                     }
-                    await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                    SendMessage(Mensaje);
                 }
                 else if (Mensaje != string.Empty)
                 {
-                    await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + Mensaje, Telegram.Bot.Types.Enums.ParseMode.Markdown);
-                }
+                    SendMessage(Mensaje);
+                }                
                 timer.Enabled = true;
             }
             catch (Exception ex)
             {
-                await Bot.SendTextMessageAsync(-364639169, "*México-Irapuato* \n" + ex.Message, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                SendMessage(ex.Message);
                 timer.Enabled = true;
             }
           
@@ -170,6 +170,10 @@ namespace MonitoreoMexIra
                 Nombre_Plaza = NombrePlaza,
                 StatusPlaza = Observaciones == string.Empty ? "OK" : Observaciones
             };         
+        }
+        public async void SendMessage(string Message)
+        {
+            await Bot.SendTextMessageAsync(-343941115, "*México-Irapuato* \n" + Message, Telegram.Bot.Types.Enums.ParseMode.Markdown);
         }
     }
 }
